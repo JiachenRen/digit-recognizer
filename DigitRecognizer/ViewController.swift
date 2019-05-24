@@ -11,11 +11,17 @@ import Vision
 import CoreImage
 
 class ViewController: UIViewController, CanvasViewDelegate {
-
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var predictionLabel: UILabel!
-    var requests = [VNCoreMLRequest]()
+    @IBOutlet weak var modelNameLabel: UILabel!
     
+    var requests = [VNCoreMLRequest]()
+    var coreMLModel = CustomDigitRecognizer().model {
+        didSet {
+            setupCoreMLRequest()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         canvasView.delegate = self
@@ -25,7 +31,7 @@ class ViewController: UIViewController, CanvasViewDelegate {
     
     private func setupCoreMLRequest() {
         // Load the ML model through its generated class
-        guard let model = try? VNCoreMLModel(for: DigitRecognizer().model) else {
+        guard let model = try? VNCoreMLModel(for: coreMLModel) else {
             fatalError("can't load ML model")
         }
         
@@ -41,16 +47,8 @@ class ViewController: UIViewController, CanvasViewDelegate {
         }
         
         DispatchQueue.main.async { [unowned self] in
-            // Update prediction label
-            if self.predictionLabel.text!.starts(with: "N/A") {
-                self.predictionLabel.text = ""
-            }
-            self.predictionLabel.text! += topResult.identifier
+            self.predictionLabel.text! = topResult.identifier
         }
-    }
-    
-    @IBAction func predictButtonTouched(_ sender: Any) {
-        makePrediction()
     }
     
     /// Make prediction using what's drawn in the UIView as input image.
@@ -70,5 +68,27 @@ class ViewController: UIViewController, CanvasViewDelegate {
             }
         }
     }
+    
+    private func updateModelLabel(_ newModelName: String) {
+        modelNameLabel.text = newModelName
+    }
+    
+    @IBAction func changeModelButtonTouched(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Select CoreML Model", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "99.7% MNIST", style: .default) {[unowned self] action in
+            self.coreMLModel = DigitRecognizer().model
+            self.updateModelLabel(action.title!)
+        })
+        alert.addAction(UIAlertAction(title: "CUSTOM 4-LAYER CNN MNIST", style: .default) {[unowned self] action in
+            self.coreMLModel = CustomDigitRecognizer().model
+            self.updateModelLabel(action.title!)
+        })
+        alert.addAction(UIAlertAction(title: "BASELINE 2-LAYER CNN MNIST", style: .default) {[unowned self] action in
+            self.coreMLModel = BaselineDigitRecognizer().model
+            self.updateModelLabel(action.title!)
+        })
+        present(alert, animated: true)
+    }
+    
 
 }

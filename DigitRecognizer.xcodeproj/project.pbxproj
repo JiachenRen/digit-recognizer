@@ -18,6 +18,8 @@
 		1F471BFC22986D2D00700179 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFB22986D2D00700179 /* CGRect.swift */; };
 		1F471BFE22986D3900700179 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFD22986D3900700179 /* UIImage.swift */; };
 		1F471C00229879DB00700179 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFF229879DB00700179 /* GridView.swift */; };
+		1F471C022298825700700179 /* CustomDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C012298825700700179 /* CustomDigitRecognizer.mlmodel */; };
+		1F471C042298945D00700179 /* BaselineDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		1F471BFB22986D2D00700179 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		1F471BFD22986D3900700179 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		1F471BFF229879DB00700179 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		1F471C012298825700700179 /* CustomDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CustomDigitRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BaselineDigitRecognizer.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				1F471BD52297904900700179 /* AppDelegate.swift */,
 				1F471BFA22986D1E00700179 /* Extensions */,
 				1F471BF622983E4900700179 /* DigitRecognizer.mlmodel */,
+				1F471C012298825700700179 /* CustomDigitRecognizer.mlmodel */,
+				1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */,
 				1F471BD72297904900700179 /* ViewController.swift */,
 				1F471BEC22979CFE00700179 /* CanvasView.swift */,
 				1F471BFF229879DB00700179 /* GridView.swift */,
@@ -165,7 +171,9 @@
 				1F471BFC22986D2D00700179 /* CGRect.swift in Sources */,
 				1F471C00229879DB00700179 /* GridView.swift in Sources */,
 				1F471BDE2297904900700179 /* DigitRecognizer.xcdatamodeld in Sources */,
+				1F471C022298825700700179 /* CustomDigitRecognizer.mlmodel in Sources */,
 				1F471BD82297904900700179 /* ViewController.swift in Sources */,
+				1F471C042298945D00700179 /* BaselineDigitRecognizer.mlmodel in Sources */,
 				1F471BED22979CFE00700179 /* CanvasView.swift in Sources */,
 				1F471BD62297904900700179 /* AppDelegate.swift in Sources */,
 				1F471BFE22986D3900700179 /* UIImage.swift in Sources */,

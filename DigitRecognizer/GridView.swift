@@ -59,5 +59,32 @@ class GridView: UIView {
         // Specify a border (stroke) color.
         UIColor.lightGray.setStroke()
         path.stroke()
+        
+        layer.mask = createGradientLayer(
+            from: CGPoint(x: 0.5, y: 0),
+            to: CGPoint(x: 0.5, y: 1)
+        )
     }
+    
+    private func createGradientLayer(from startPoint: CGPoint, to endPoint: CGPoint) -> CAGradientLayer {
+        let gradient = CAGradientLayer()
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        let whiteColor = UIColor.white
+        gradient.colors = [
+            whiteColor.withAlphaComponent(0.0).cgColor,
+            whiteColor.withAlphaComponent(1.0).cgColor,
+            whiteColor.withAlphaComponent(1.0).cgColor,
+            whiteColor.withAlphaComponent(0.0).cgColor
+        ]
+        gradient.locations = [
+            NSNumber(value: 0.0),
+            NSNumber(value: 0.2),
+            NSNumber(value: 0.8),
+            NSNumber(value: 1.0)
+        ]
+        gradient.frame = bounds
+        return gradient
+    }
+    
 }

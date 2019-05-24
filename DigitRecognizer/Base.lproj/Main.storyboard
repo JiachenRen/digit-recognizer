@@ -29,14 +29,6 @@
                                     <constraint firstAttribute="width" secondItem="A6g-pJ-EFg" secondAttribute="height" multiplier="1:1" id="Tqy-2E-1eW"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08L-1F-N8s">
-                                <rect key="frame" x="176" y="806" width="62" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Predict"/>
-                                <connections>
-                                    <action selector="predictButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdI-29-Zhl"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ion-j3-5ax">
                                 <rect key="frame" x="143.5" y="44" width="127" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
@@ -49,27 +41,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofv-cp-R9s">
+                                <rect key="frame" x="178" y="741.5" width="58.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIGIT RECOGNIZER - MNIST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3L-nb-Spb">
+                                <rect key="frame" x="34" y="776" width="346" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqB-QN-7Sk">
+                                <rect key="frame" x="157" y="832" width="100" height="30"/>
+                                <state key="normal" title="Change Model"/>
+                                <connections>
+                                    <action selector="changeModelButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OON-gt-WXR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PqB-QN-7Sk" firstAttribute="centerX" secondItem="s3L-nb-Spb" secondAttribute="centerX" id="0h2-N8-sOc"/>
                             <constraint firstItem="Z5J-bc-ZyA" firstAttribute="top" secondItem="Ion-j3-5ax" secondAttribute="bottom" constant="20" id="1rI-l7-Vfb"/>
                             <constraint firstItem="UgU-M6-ewf" firstAttribute="height" secondItem="A6g-pJ-EFg" secondAttribute="height" id="5Qv-Ze-Pwe"/>
+                            <constraint firstItem="ofv-cp-R9s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="65h-U6-0Da"/>
+                            <constraint firstItem="PqB-QN-7Sk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AM0-wZ-oVE"/>
                             <constraint firstItem="UgU-M6-ewf" firstAttribute="width" secondItem="A6g-pJ-EFg" secondAttribute="width" id="L9s-xv-7Vo"/>
                             <constraint firstItem="UgU-M6-ewf" firstAttribute="centerY" secondItem="A6g-pJ-EFg" secondAttribute="centerY" id="PsC-12-waZ"/>
                             <constraint firstItem="A6g-pJ-EFg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SBj-Vq-nnb"/>
+                            <constraint firstItem="s3L-nb-Spb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="USe-YL-KyY"/>
                             <constraint firstItem="UgU-M6-ewf" firstAttribute="centerX" secondItem="A6g-pJ-EFg" secondAttribute="centerX" id="W40-jR-70i"/>
-                            <constraint firstItem="08L-1F-N8s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dNp-uQ-b9u"/>
                             <constraint firstItem="A6g-pJ-EFg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iU2-Lq-EZt"/>
+                            <constraint firstItem="PqB-QN-7Sk" firstAttribute="top" secondItem="s3L-nb-Spb" secondAttribute="bottom" constant="20" id="kRd-ah-kE1"/>
                             <constraint firstItem="Z5J-bc-ZyA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mxC-kC-wAr"/>
                             <constraint firstItem="Ion-j3-5ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="noA-oV-WbX"/>
                             <constraint firstItem="Ion-j3-5ax" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="orJ-vP-oxf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="08L-1F-N8s" secondAttribute="bottom" constant="20" id="pG8-C4-F6A"/>
+                            <constraint firstItem="s3L-nb-Spb" firstAttribute="top" secondItem="ofv-cp-R9s" secondAttribute="bottom" constant="8" id="qF1-Uh-S2H"/>
                             <constraint firstItem="A6g-pJ-EFg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sP9-vz-xtC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="canvasView" destination="A6g-pJ-EFg" id="wQD-oI-dAv"/>
+                        <outlet property="modelNameLabel" destination="s3L-nb-Spb" id="8iA-kl-jr5"/>
                         <outlet property="predictionLabel" destination="Z5J-bc-ZyA" id="GUC-kn-V3x"/>
                     </connections>
                 </viewController>
