@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DigitRecognizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgU-M6-ewf" customClass="GridView" customModule="DigitRecognizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6g-pJ-EFg" customClass="CanvasView" customModule="DigitRecognizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="A6g-pJ-EFg" secondAttribute="height" multiplier="1:1" id="Tqy-2E-1eW"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08L-1F-N8s">
+                                <rect key="frame" x="176" y="806" width="62" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Predict"/>
+                                <connections>
+                                    <action selector="predictButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdI-29-Zhl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ion-j3-5ax">
+                                <rect key="frame" x="143.5" y="44" width="127" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5J-bc-ZyA">
+                                <rect key="frame" x="180.5" y="100" width="53.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z5J-bc-ZyA" firstAttribute="top" secondItem="Ion-j3-5ax" secondAttribute="bottom" constant="20" id="1rI-l7-Vfb"/>
+                            <constraint firstItem="UgU-M6-ewf" firstAttribute="height" secondItem="A6g-pJ-EFg" secondAttribute="height" id="5Qv-Ze-Pwe"/>
+                            <constraint firstItem="UgU-M6-ewf" firstAttribute="width" secondItem="A6g-pJ-EFg" secondAttribute="width" id="L9s-xv-7Vo"/>
+                            <constraint firstItem="UgU-M6-ewf" firstAttribute="centerY" secondItem="A6g-pJ-EFg" secondAttribute="centerY" id="PsC-12-waZ"/>
+                            <constraint firstItem="A6g-pJ-EFg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SBj-Vq-nnb"/>
+                            <constraint firstItem="UgU-M6-ewf" firstAttribute="centerX" secondItem="A6g-pJ-EFg" secondAttribute="centerX" id="W40-jR-70i"/>
+                            <constraint firstItem="08L-1F-N8s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dNp-uQ-b9u"/>
+                            <constraint firstItem="A6g-pJ-EFg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iU2-Lq-EZt"/>
+                            <constraint firstItem="Z5J-bc-ZyA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mxC-kC-wAr"/>
+                            <constraint firstItem="Ion-j3-5ax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="noA-oV-WbX"/>
+                            <constraint firstItem="Ion-j3-5ax" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="orJ-vP-oxf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="08L-1F-N8s" secondAttribute="bottom" constant="20" id="pG8-C4-F6A"/>
+                            <constraint firstItem="A6g-pJ-EFg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sP9-vz-xtC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="canvasView" destination="A6g-pJ-EFg" id="wQD-oI-dAv"/>
+                        <outlet property="predictionLabel" destination="Z5J-bc-ZyA" id="GUC-kn-V3x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="82.366071428571431"/>
         </scene>
     </scenes>
 </document>

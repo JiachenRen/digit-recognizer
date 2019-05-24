@@ -13,6 +13,11 @@
 		1F471BDE2297904900700179 /* DigitRecognizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BDC2297904900700179 /* DigitRecognizer.xcdatamodeld */; };
 		1F471BE02297904B00700179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F471BDF2297904B00700179 /* Assets.xcassets */; };
 		1F471BE32297904B00700179 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F471BE12297904B00700179 /* LaunchScreen.storyboard */; };
+		1F471BED22979CFE00700179 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BEC22979CFE00700179 /* CanvasView.swift */; };
+		1F471BF722983E4900700179 /* DigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BF622983E4900700179 /* DigitRecognizer.mlmodel */; };
+		1F471BFC22986D2D00700179 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFB22986D2D00700179 /* CGRect.swift */; };
+		1F471BFE22986D3900700179 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFD22986D3900700179 /* UIImage.swift */; };
+		1F471C00229879DB00700179 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFF229879DB00700179 /* GridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		1F471BDF2297904B00700179 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F471BE22297904B00700179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F471BE42297904B00700179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F471BEC22979CFE00700179 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		1F471BF622983E4900700179 /* DigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DigitRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F471BFB22986D2D00700179 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		1F471BFD22986D3900700179 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		1F471BFF229879DB00700179 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				1F471BD52297904900700179 /* AppDelegate.swift */,
+				1F471BFA22986D1E00700179 /* Extensions */,
+				1F471BF622983E4900700179 /* DigitRecognizer.mlmodel */,
 				1F471BD72297904900700179 /* ViewController.swift */,
+				1F471BEC22979CFE00700179 /* CanvasView.swift */,
+				1F471BFF229879DB00700179 /* GridView.swift */,
 				1F471BD92297904900700179 /* Main.storyboard */,
 				1F471BDF2297904B00700179 /* Assets.xcassets */,
 				1F471BE12297904B00700179 /* LaunchScreen.storyboard */,
@@ -65,6 +79,15 @@
 				1F471BDC2297904900700179 /* DigitRecognizer.xcdatamodeld */,
 			);
 			path = DigitRecognizer;
+			sourceTree = "<group>";
+		};
+		1F471BFA22986D1E00700179 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F471BFB22986D2D00700179 /* CGRect.swift */,
+				1F471BFD22986D3900700179 /* UIImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F471BF722983E4900700179 /* DigitRecognizer.mlmodel in Sources */,
+				1F471BFC22986D2D00700179 /* CGRect.swift in Sources */,
+				1F471C00229879DB00700179 /* GridView.swift in Sources */,
 				1F471BDE2297904900700179 /* DigitRecognizer.xcdatamodeld in Sources */,
 				1F471BD82297904900700179 /* ViewController.swift in Sources */,
+				1F471BED22979CFE00700179 /* CanvasView.swift in Sources */,
 				1F471BD62297904900700179 /* AppDelegate.swift in Sources */,
+				1F471BFE22986D3900700179 /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AM89ND2ZY7;
 				INFOPLIST_FILE = DigitRecognizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AM89ND2ZY7;
 				INFOPLIST_FILE = DigitRecognizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
