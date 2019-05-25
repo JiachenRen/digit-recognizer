@@ -16,7 +16,7 @@ class ViewController: UIViewController, CanvasViewDelegate {
     @IBOutlet weak var modelNameLabel: UILabel!
     
     var requests = [VNCoreMLRequest]()
-    var coreMLModel = CustomDigitRecognizer().model {
+    var genericModel = MLModelManager.models[0] {
         didSet {
             setupCoreMLRequest()
         }
@@ -26,11 +26,12 @@ class ViewController: UIViewController, CanvasViewDelegate {
         super.viewDidLoad()
         canvasView.delegate = self
         setupCoreMLRequest()
+        updateModelLabel(genericModel.name)
     }
     
     private func setupCoreMLRequest() {
         // Load the ML model through its generated class
-        guard let model = try? VNCoreMLModel(for: coreMLModel) else {
+        guard let model = try? VNCoreMLModel(for: genericModel.coreMLModel) else {
             fatalError("can't load ML model")
         }
         
@@ -54,18 +55,29 @@ class ViewController: UIViewController, CanvasViewDelegate {
     func makePrediction() {
         
         // Figure out the model input dimensions
-        let constraint = coreMLModel.modelDescription
-            .inputDescriptionsByName["image"]!
-            .imageConstraint!
+        let description = genericModel.coreMLModel.modelDescription
+        let inputDescription = description.inputDescriptionsByName["image"]
+            ?? description.inputDescriptionsByName["data"]!
+        let constraint = inputDescription.imageConstraint!
         
         let dim = CGSize(width: constraint.pixelsWide, height: constraint.pixelsHigh)
         
-        // Scale and invert the image
-        let image = UIImage(view: canvasView)
+        // Scale the image
+        var image = UIImage(view: canvasView)
             .scale(toSize: dim)
-            .inverted()
         
-        let handler = VNImageRequestHandler(ciImage: image.ciImage!)
+        // Invert the image if model requests it
+        if genericModel.inverted {
+            image = image.inverted()
+        }
+        
+        var handler: VNImageRequestHandler
+        if let ciImage = image.ciImage {
+            // For inverted images
+            handler = VNImageRequestHandler(ciImage: ciImage)
+        } else {
+            handler = VNImageRequestHandler(cgImage: image.cgImage!)
+        }
         DispatchQueue.global(qos: .userInteractive).async {[unowned self] in
             do {
                 try handler.perform(self.requests)
@@ -82,8 +94,8 @@ class ViewController: UIViewController, CanvasViewDelegate {
     @IBAction func changeModelButtonTouched(_ sender: UIButton) {
         let alert = UIAlertController(title: "Select CoreML Model", message: nil, preferredStyle: .actionSheet)
         MLModelManager.models.forEach {model in
-            alert.addAction(UIAlertAction(title: model.key, style: .default) {[unowned self] action in
-                self.coreMLModel = model.value
+            alert.addAction(UIAlertAction(title: model.name, style: .default) {[unowned self] action in
+                self.genericModel = model
                 self.updateModelLabel(action.title!)
             })
         }
