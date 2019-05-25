@@ -25,7 +25,6 @@ class ViewController: UIViewController, CanvasViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         canvasView.delegate = self
-        
         setupCoreMLRequest()
     }
     
@@ -54,9 +53,16 @@ class ViewController: UIViewController, CanvasViewDelegate {
     /// Make prediction using what's drawn in the UIView as input image.
     func makePrediction() {
         
+        // Figure out the model input dimensions
+        let constraint = coreMLModel.modelDescription
+            .inputDescriptionsByName["image"]!
+            .imageConstraint!
+        
+        let dim = CGSize(width: constraint.pixelsWide, height: constraint.pixelsHigh)
+        
         // Scale and invert the image
         let image = UIImage(view: canvasView)
-            .scale(toSize: CGSize(width: 28, height: 28))
+            .scale(toSize: dim)
             .inverted()
         
         let handler = VNImageRequestHandler(ciImage: image.ciImage!)
@@ -75,20 +81,15 @@ class ViewController: UIViewController, CanvasViewDelegate {
     
     @IBAction func changeModelButtonTouched(_ sender: UIButton) {
         let alert = UIAlertController(title: "Select CoreML Model", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "99.7% MNIST", style: .default) {[unowned self] action in
-            self.coreMLModel = DigitRecognizer().model
-            self.updateModelLabel(action.title!)
-        })
-        alert.addAction(UIAlertAction(title: "CUSTOM 4-LAYER CNN MNIST", style: .default) {[unowned self] action in
-            self.coreMLModel = CustomDigitRecognizer().model
-            self.updateModelLabel(action.title!)
-        })
-        alert.addAction(UIAlertAction(title: "BASELINE 2-LAYER CNN MNIST", style: .default) {[unowned self] action in
-            self.coreMLModel = BaselineDigitRecognizer().model
-            self.updateModelLabel(action.title!)
+        MLModelManager.models.forEach {model in
+            alert.addAction(UIAlertAction(title: model.key, style: .default) {[unowned self] action in
+                self.coreMLModel = model.value
+                self.updateModelLabel(action.title!)
+            })
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) {_ in
         })
         present(alert, animated: true)
     }
     
-
 }

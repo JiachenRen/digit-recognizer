@@ -20,6 +20,7 @@
 		1F471C00229879DB00700179 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471BFF229879DB00700179 /* GridView.swift */; };
 		1F471C022298825700700179 /* CustomDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C012298825700700179 /* CustomDigitRecognizer.mlmodel */; };
 		1F471C042298945D00700179 /* BaselineDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */; };
+		1F471C062298BE9C00700179 /* MLModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C052298BE9C00700179 /* MLModelManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1F471BFF229879DB00700179 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		1F471C012298825700700179 /* CustomDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CustomDigitRecognizer.mlmodel; sourceTree = "<group>"; };
 		1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BaselineDigitRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F471C052298BE9C00700179 /* MLModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLModelManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */,
 				1F471BD72297904900700179 /* ViewController.swift */,
 				1F471BEC22979CFE00700179 /* CanvasView.swift */,
+				1F471C052298BE9C00700179 /* MLModelManager.swift */,
 				1F471BFF229879DB00700179 /* GridView.swift */,
 				1F471BD92297904900700179 /* Main.storyboard */,
 				1F471BDF2297904B00700179 /* Assets.xcassets */,
@@ -176,6 +179,7 @@
 				1F471C042298945D00700179 /* BaselineDigitRecognizer.mlmodel in Sources */,
 				1F471BED22979CFE00700179 /* CanvasView.swift in Sources */,
 				1F471BD62297904900700179 /* AppDelegate.swift in Sources */,
+				1F471C062298BE9C00700179 /* MLModelManager.swift in Sources */,
 				1F471BFE22986D3900700179 /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
