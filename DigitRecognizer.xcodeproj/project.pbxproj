@@ -23,7 +23,10 @@
 		1F471C062298BE9C00700179 /* MLModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C052298BE9C00700179 /* MLModelManager.swift */; };
 		1F471C092299045F00700179 /* UselessDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C082299045F00700179 /* UselessDigitRecognizer.mlmodel */; };
 		1F471C0D22990AFB00700179 /* GenericMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C0C22990AFB00700179 /* GenericMLModel.swift */; };
-		1F471C1322999BB700700179 /* ExpandedDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C1222999BB700700179 /* ExpandedDigitRecognizer.mlmodel */; };
+		1F471C152299AB0100700179 /* ExpandedDigitRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C142299AB0100700179 /* ExpandedDigitRecognizer.mlmodel */; };
+		1F471C192299BDA000700179 /* LetterRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C182299BDA000700179 /* LetterRecognizer.mlmodel */; };
+		1F471C1B2299D11500700179 /* ImprovedLetterRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F471C1A2299D11500700179 /* ImprovedLetterRecognizer.mlmodel */; };
+		1F962E1A229C5199003FE53C /* BestLetterRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1F962E19229C5199003FE53C /* BestLetterRecognizer.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +48,10 @@
 		1F471C052298BE9C00700179 /* MLModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLModelManager.swift; sourceTree = "<group>"; };
 		1F471C082299045F00700179 /* UselessDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = UselessDigitRecognizer.mlmodel; sourceTree = "<group>"; };
 		1F471C0C22990AFB00700179 /* GenericMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMLModel.swift; sourceTree = "<group>"; };
-		1F471C1222999BB700700179 /* ExpandedDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpandedDigitRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F471C142299AB0100700179 /* ExpandedDigitRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpandedDigitRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F471C182299BDA000700179 /* LetterRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LetterRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F471C1A2299D11500700179 /* ImprovedLetterRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImprovedLetterRecognizer.mlmodel; sourceTree = "<group>"; };
+		1F962E19229C5199003FE53C /* BestLetterRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BestLetterRecognizer.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +113,10 @@
 		1F471C072298D81C00700179 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F471C1222999BB700700179 /* ExpandedDigitRecognizer.mlmodel */,
+				1F962E19229C5199003FE53C /* BestLetterRecognizer.mlmodel */,
+				1F471C1A2299D11500700179 /* ImprovedLetterRecognizer.mlmodel */,
+				1F471C182299BDA000700179 /* LetterRecognizer.mlmodel */,
+				1F471C142299AB0100700179 /* ExpandedDigitRecognizer.mlmodel */,
 				1F471C082299045F00700179 /* UselessDigitRecognizer.mlmodel */,
 				1F471BF622983E4900700179 /* DigitRecognizer.mlmodel */,
 				1F471C032298945D00700179 /* BaselineDigitRecognizer.mlmodel */,
@@ -188,8 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F471BF722983E4900700179 /* DigitRecognizer.mlmodel in Sources */,
+				1F471C192299BDA000700179 /* LetterRecognizer.mlmodel in Sources */,
+				1F471C1B2299D11500700179 /* ImprovedLetterRecognizer.mlmodel in Sources */,
+				1F471C152299AB0100700179 /* ExpandedDigitRecognizer.mlmodel in Sources */,
 				1F471BFC22986D2D00700179 /* CGRect.swift in Sources */,
-				1F471C1322999BB700700179 /* ExpandedDigitRecognizer.mlmodel in Sources */,
 				1F471C00229879DB00700179 /* GridView.swift in Sources */,
 				1F471BDE2297904900700179 /* DigitRecognizer.xcdatamodeld in Sources */,
 				1F471C022298825700700179 /* CustomDigitRecognizer.mlmodel in Sources */,
@@ -199,6 +210,7 @@
 				1F471BED22979CFE00700179 /* CanvasView.swift in Sources */,
 				1F471BD62297904900700179 /* AppDelegate.swift in Sources */,
 				1F471C062298BE9C00700179 /* MLModelManager.swift in Sources */,
+				1F962E1A229C5199003FE53C /* BestLetterRecognizer.mlmodel in Sources */,
 				1F471C092299045F00700179 /* UselessDigitRecognizer.mlmodel in Sources */,
 				1F471BFE22986D3900700179 /* UIImage.swift in Sources */,
 			);

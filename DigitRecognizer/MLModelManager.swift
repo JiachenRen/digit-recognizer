@@ -15,6 +15,9 @@ class MLModelManager {
         .init(name: "CUSTOM 4-LAYER CNN MNIST", model: CustomDigitRecognizer().model),
         .init(name: "BASELINE 2-LAYER CNN MNIST", model: BaselineDigitRecognizer().model),
         .init(name: "51.5% CNN 100 SAMPLE", model: UselessDigitRecognizer().model),
-        .init(name: "99.6% 5-LAYER 22000 EX", model: ExpandedDigitRecognizer().model),
+        .init(name: "89.4% 5-LAYER 22000 EX", model: ExpandedDigitRecognizer().model),
+        .init(name: "84.5% 6-L 261-28710 LETTER", model: LetterRecognizer().model),
+        .init(name: "93.8% 6-L 557-61270 LETTER", model: ImprovedLetterRecognizer().model),
+        .init(name: "97.2% 5-L 87824 LETTER", model: BestLetterRecognizer().model),
     ]
 }
